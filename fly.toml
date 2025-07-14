@@ -20,5 +20,5 @@ processes = ['app']
 size = 'shared-cpu-1x'
 
 [env]
-HARVEST_API_BASE_URL=https://api.harvestapp.silent-rain.harveststaging.com
-OAUTH_API_BASE_URL=https://id.getharvest.silent-rain.harveststaging.com
+HARVEST_API_BASE_URL = "https://api.harvestapp.silent-rain.harveststaging.com"
+OAUTH_API_BASE_URL = "https://id.getharvest.silent-rain.harveststaging.com"
