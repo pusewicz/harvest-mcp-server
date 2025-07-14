@@ -1,0 +1,26 @@
+{
+  "name": "harvest-mcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "private": true,
+  "author": "Piotr Usewicz <piotr@getharvest.com>",
+  "type": "module",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "tsx --env-file=.env src/app",
+    "start": "tsx src/app",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.13",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
