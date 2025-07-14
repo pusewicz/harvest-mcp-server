@@ -1,0 +1,24 @@
+# fly.toml app configuration file generated for harvest-mcp-server-rough-snowflake-8793 on 2025-07-14T15:49:40+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'harvest-mcp-server-rough-snowflake-8793'
+primary_region = 'cdg'
+
+[build]
+
+[http_service]
+internal_port = 3000
+force_https = true
+auto_stop_machines = 'stop'
+auto_start_machines = true
+min_machines_running = 0
+processes = ['app']
+
+[[vm]]
+size = 'shared-cpu-1x'
+
+[env]
+HARVEST_API_BASE_URL=https://api.harvestapp.silent-rain.harveststaging.com
+OAUTH_API_BASE_URL=https://id.getharvest.silent-rain.harveststaging.com
