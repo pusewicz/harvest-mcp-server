@@ -1,6 +1,7 @@
 import { OAUTH_API_BASE_URL } from "./constants";
 
 import { McpStreamableController } from "./controllers/mcp_streamable_controller";
+import { McpSseController } from "./controllers/mcp_sse_controller";
 import { OAuthController } from "./controllers/oauth_controller";
 
 import { McpServer } from "./mcp/mcp_server";
@@ -14,6 +15,10 @@ const mcpServer = new McpServer({
 });
 
 export const mcpAuthMiddleware = new McpAuthMiddleware();
+
+export const mcpSseController = new McpSseController({
+  mcpServer,
+})
 
 export const mcpStreamableController = new McpStreamableController({
   mcpServer,

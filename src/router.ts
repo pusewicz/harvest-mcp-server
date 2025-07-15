@@ -3,6 +3,7 @@ import { json, Request, Response, Router } from "express";
 import {
   mcpAuthMiddleware,
   mcpStreamableController,
+  mcpSseController,
   oauthController,
 } from "./container";
 
@@ -12,6 +13,10 @@ export const router = Router();
 router.get("/", (req: Request, res: Response) => {
   res.send("OK");
 });
+
+// SSE.
+router.get('/sse', mcpAuthMiddleware.requireAuth, mcpSseController.getSse);
+router.post('/messages', mcpAuthMiddleware.requireAuth, mcpSseController.postMessages);
 
 // Streamable HTTP.
 router.post(
