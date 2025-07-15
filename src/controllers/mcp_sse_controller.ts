@@ -20,7 +20,7 @@ export class McpSseController {
     this.postMessages = this.postMessages.bind(this);
   }
 
-  public async getSse(req: McpAuthenticatedRequest, res: Response): Promise<void> {
+  public async getSse(_req: McpAuthenticatedRequest, res: Response): Promise<void> {
     const transport = new SSEServerTransport('/messages', res);
 
     this.transportsMap.set(transport.sessionId, transport);

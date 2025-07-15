@@ -1,7 +1,8 @@
+import { AuthInfo } from '@modelcontextprotocol/sdk/server/auth/types';
 import { NextFunction, Request, Response } from "express";
 
 export interface McpAuthenticatedRequest extends Request {
-  auth?: string;
+  auth?: AuthInfo;
 }
 
 export class McpAuthMiddleware {
@@ -29,7 +30,12 @@ export class McpAuthMiddleware {
       return;
     }
 
-    req.auth = token;
+    req.auth = {
+      clientId: 'client-id', // Replace with actual client ID if available
+      token,
+      scopes: []
+    };
+
     next();
   }
 }

@@ -43,7 +43,7 @@ export class McpServer {
       "get-my-user-id",
       "Get the user ID of the authenticated user",
       async ({ authInfo }) => {
-        const user = await this.userService.getMe(authInfo);
+        const user = await this.userService.getMe(authInfo.token);
         return this.respondWithJson({ userId: user?.id || null });
       },
     );
